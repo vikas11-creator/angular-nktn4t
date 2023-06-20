@@ -1,0 +1,34 @@
+<form [formGroup]="tableForm">
+  <div>
+    <div>
+      <label class="label" for="endDate"> Choose Row </label>
+      <div>
+        <input type="text"formControlName='row'
+        class="input-field" name="inputLabel" placeholder="" />
+      </div>
+    </div>
+    <div>
+      <label class="label" for="endDate"> Choose Column </label>
+      <div>
+        <input type="text"formControlName='column'
+        class="input-field" name="inputLabel" placeholder="" />
+      </div>
+    </div>
+    <div>
+      <div>
+        <div>
+          <button type="submit" class="btn btn-submit" (click)="setRowColoum()">
+            Create Table
+          </button>
+        </div>
+        <div>
+          <button type="submit" class="btn btn-submit" (click)="mergeColumns()">
+            merge
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+</form>
+
+<div id="tableContainer"></div>
