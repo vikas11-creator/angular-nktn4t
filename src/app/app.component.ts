@@ -11,6 +11,17 @@ export class AppComponent {
   constructor(private fb: FormBuilder) {}
   ngOnInit() {
     this.initializeForm();
+    document
+      .getElementById('tableContainer')
+      .addEventListener('click', function (e) {
+        // e.target is the clicked element!
+        console.log(e);
+        // If it was a list item
+        if (e.target) {
+          // List item found!  Output the ID!
+          console.log(e.target);
+        }
+      });
   }
 
   initializeForm() {
@@ -44,7 +55,7 @@ export class AppComponent {
   }
 
   mergeColumns() {
-    var table: HTMLElement = document.getElementById('tableContainer');
+    var table = document.getElementById('tableContainer');
     console.log(table);
     let rows = this.tableForm.value.row;
     // console.log(rowEl)
